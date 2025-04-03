@@ -1,14 +1,3 @@
-/* 
-- Compilado com: gcc -O3 main.c -o teste03 && ./teste03
-(descrevendo o tipo de otimização O0, O2 e O3)
-(colocar no relatorio os comandos de compilação)
-
-- Exercicio de Paralelismo em nivel:
-Por que na compilação O0 a soma com multiplas variaveis é mais rápido do que a soma acumulativa, enquanto na O3 é o oposto?
-R:  Na compilação -O0 (sem otimizações), o código é traduzido quase diretamente, sem otimizações de registradores e sem eliminação de dependências. Assim, a soma com múltiplas variáveis (sum_parallel) é mais rápida porque reduz dependências entre iterações, permitindo mais paralelismo ao nível de instrução.  Já na -O3, o compilador vetoriza e desenrola loops, otimizando automaticamente a soma sequencial (sum_sequential). Isso faz com que a otimização torne o loop acumulativo mais eficiente que a abordagem manual de paralelismo.
-
-*/
-
 #include <stdio.h>
 #include <stdlib.h>
 #include <sys/time.h>
