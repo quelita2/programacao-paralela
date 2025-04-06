@@ -12,20 +12,20 @@ Este repositório tem como objetivo fornecer materiais de estudo, exemplos prát
 ## Estrutura do Repositório
 ```
 📂 topico01/                # 1° Tópico estudado
-├── 📂 docs/                # Materiais de estudo do professor
+├── 📂 assets/              # Materiais de estudo do professor
 ├── 📂 tarefa01/            # Tarefa sobre Memoria Cache
-│   ├── docs/                # relatório da Tarefa
+│   ├── assets/              # Relatório da Tarefa
 │   ├── src/                 # Código da Tarefa
 ├── 📂 tarefa02/            # Tarefa sobre IPL Paralelismo
-│   ├── docs/                # relatório da Tarefa
+│   ├── assets/              # Relatório da Tarefa
 │   ├── src/                 # Código da Tarefa
 ├── 📂 tarefa03/            # Tarefa sobre Aproximação Matemática de pi
-│   ├── docs/                # relatório da Tarefa
+│   ├── assets/              # Relatório da Tarefa
 │   ├── src/                 # Código da Tarefa
 ├── 📂 tarefa04/            # Tarefa sobre Aplicações limitadas por memória ou CPU
-│   ├── docs/                # relatório da Tarefa
+│   ├── assets/              # Relatório e gráfico da Tarefa
 │   ├── src/                 # Código da Tarefa
-├── README.md               # Documentação do projeto
+├── README.md                # Documentação do projeto
 ```
 
 ## Recursos Úteis
