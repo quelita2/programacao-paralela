@@ -49,12 +49,10 @@ void compute_bound(int num_threads) {
     
     double end = get_time();
     printf("Compute-bound (Threads: %d) -> Tempo: %f s\n", num_threads, end - start);
-    
-    printf("Resultado final (ignore): %f\n", result);
   }
 
 int main() {
-    int thread_counts[] = {1, 2, 4, 8, 12};
+    int thread_counts[] = {1, 2, 4, 8, 12, 16, 32};
     int num_tests = sizeof(thread_counts) / sizeof(thread_counts[0]);
 
     for (int i = 0; i < num_tests; i++) {
