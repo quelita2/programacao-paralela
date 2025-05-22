@@ -47,7 +47,7 @@ void initialize(int perturb) {
 }
 
 void step() {
-    #pragma omp parallel for collapse(3) schedule(static)
+    #pragma omp parallel for collapse(3) schedule(guided, 128)
     for (int i = 1; i < N-1; i++)
         for (int j = 1; j < N-1; j++)
             for (int k = 1; k < N-1; k++) {
@@ -104,13 +104,7 @@ int main(int argc, char *argv[]) {
     save_slice("velocidade_perturbado.dat", N/2);
 
     // SALVAR RESULTADOS EM CSV
-    FILE *f = fopen("escalabilidade_fraca.csv", "a");
-    if (f) {
-        fprintf(f, "%d,%d,%d,%.6f\n", N, STEPS, num_threads, tempo_perturbado);
-        fclose(f);
-    } else {
-        perror("Erro ao salvar CSV");
-    }
+    printf("%d,%d,%d,%.6f\n", N, STEPS, num_threads, tempo_perturbado);
 
     free_3d_array(u, N);
     free_3d_array(u_new, N);
