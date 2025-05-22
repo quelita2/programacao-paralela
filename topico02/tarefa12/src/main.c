@@ -75,19 +75,19 @@ void save_slice(char* filename, int z) {
 
 int main(int argc, char *argv[]) {
     if (argc < 3) {
-        printf("Uso: %s <N> <STEPS>\n", argv[0]);
+        printf("Uso: %s <N> <STEPS> [threads] [forte|fraca]\n", argv[0]);
         return 1;
     }
 
     N = atoi(argv[1]);
     STEPS = atoi(argv[2]);
+    int num_threads = (argc > 3) ? atoi(argv[3]) : omp_get_max_threads();
+    char *csv_filename = (argc > 4 && strcmp(argv[4], "forte") == 0) ? "escalabilidade_forte.csv" : "escalabilidade_fraca.csv";
 
     u = allocate_3d_array(N);
     u_new = allocate_3d_array(N);
 
-    int num_threads = omp_get_max_threads();
-
-    // PARTE 1: Campo parado
+    // Campo parado
     initialize(0);
     double start = get_time();
     for (int t = 0; t < STEPS; t++) step();
@@ -95,7 +95,7 @@ int main(int argc, char *argv[]) {
     double tempo_parado = end - start;
     save_slice("velocidade_parado.dat", N/2);
 
-    // PARTE 2: Campo perturbado
+    // Campo perturbado
     initialize(1);
     start = get_time();
     for (int t = 0; t < STEPS; t++) step();
@@ -103,8 +103,14 @@ int main(int argc, char *argv[]) {
     double tempo_perturbado = end - start;
     save_slice("velocidade_perturbado.dat", N/2);
 
-    // SALVAR RESULTADOS EM CSV
-    printf("%d,%d,%d,%.6f\n", N, STEPS, num_threads, tempo_perturbado);
+    // Salvar no CSV
+    FILE *f = fopen(csv_filename, "a");
+    if (f) {
+        fprintf(f, "%d,%d,%d,%.6f\n", N, STEPS, num_threads, tempo_perturbado);
+        fclose(f);
+    } else {
+        perror("Erro ao salvar CSV");
+    }
 
     free_3d_array(u, N);
     free_3d_array(u_new, N);
