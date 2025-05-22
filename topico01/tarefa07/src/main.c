@@ -1,15 +1,3 @@
-/*
-Tarefa 07: programação em memoria compartilhada (single, master, sections, tasks)
-
-Compilação:
-gcc -fopenmp main.c -o main && ./main
-clang -fopenmp -lomp -o main main.c
-
-Explicação: https://chatgpt.com/share/67fe74e6-d37c-8001-b9df-785fcc8c8f2e
-
-Crio uma tarefa que será executada por qualquer thread com o "pragma omp task". Sem firstprivate(node), o ponteiro não é copiado — as tarefas vão usar a mesma variável node que está no escopo externo. E como as tarefas são executadas mais tarde, podem acabar acessando o node errado ou inválido. Cada thread faz uma cópia local do valor de node no momento da criação da tarefa. Sem o uso de "#pragma omp task firstprivate(node)" temos acesso incorreto a dados compartilhados.
-*/
-
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
