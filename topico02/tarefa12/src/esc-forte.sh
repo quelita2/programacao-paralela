@@ -7,12 +7,12 @@
 N=64
 NSTEPS=50
 
-echo "N,NSTEPS,Threads,Time(s)" > escalabilidade_forte.csv
+echo "N,NSTEPS,Threads,Time(s)" > escalabilidade.csv
 
 gcc -fopenmp -o main main.c -lm
 
 for threads in 1 2 4 8 16 32
 do
     export OMP_NUM_THREADS=$threads
-    ./main $N $NSTEPS $threads >> escalabilidade_forte.csv
+    ./main $N $NSTEPS $threads >> escalabilidade.csv
 done
