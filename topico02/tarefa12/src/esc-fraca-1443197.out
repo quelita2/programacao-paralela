@@ -1,7 +1,0 @@
-main.c: In function ‘main’:
-main.c:85:39: warning: implicit declaration of function ‘strcmp’ [-Wimplicit-function-declaration]
-     char *csv_filename = (argc > 4 && strcmp(argv[4], "forte") == 0) ? "escalabilidade_forte.csv" : "escalabilidade_fraca.csv";
-                                       ^~~~~~
-/var/tmp/slurmd.spool/job1443197/slurm_script: line 13: 1777128 Killed                  ./main $N $NSTEPS $threads >> escalabilidade_fraca.csv
-/var/tmp/slurmd.spool/job1443197/slurm_script: line 13: 1777129 Killed                  ./main $N $NSTEPS $threads >> escalabilidade_fraca.csv
-slurmstepd: error: Detected 2 oom-kill event(s) in StepId=1443197.batch. Some of your processes may have been killed by the cgroup out-of-memory handler.
