@@ -14,5 +14,5 @@ gcc -fopenmp -o main main.c -lm
 for threads in 1 2 4 8 16 32
 do
     export OMP_NUM_THREADS=$threads
-    ./simulacao $N $NSTEPS $threads >> escalabilidade_forte.csv
+    ./main $N $NSTEPS $threads >> escalabilidade_forte.csv
 done
