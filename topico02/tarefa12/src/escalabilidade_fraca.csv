@@ -1,13 +1,5 @@
 N,NSTEPS,Threads,Time(s)
-Execução completa.
-Tempo (parado): 0.024931 s
-Tempo (perturbado): 0.023773 s
-Execução completa.
-Tempo (parado): 0.226534 s
-Tempo (perturbado): 0.225153 s
-Execução completa.
-Tempo (parado): 1.747589 s
-Tempo (perturbado): 1.743819 s
-Execução completa.
-Tempo (parado): 14.535206 s
-Tempo (perturbado): 14.487034 s
+32,50,1,0.024331
+64,50,2,0.225061
+128,50,4,1.743207
+256,50,8,14.676455
