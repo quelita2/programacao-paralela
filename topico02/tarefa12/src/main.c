@@ -104,17 +104,13 @@ int main(int argc, char *argv[]) {
     save_slice("velocidade_perturbado.dat", N/2);
 
     // SALVAR RESULTADOS EM CSV
-    FILE *f = fopen("escalabilidade.csv", "a");
+    FILE *f = fopen("escalabilidade_fraca.csv", "a");
     if (f) {
         fprintf(f, "%d,%d,%d,%.6f\n", N, STEPS, num_threads, tempo_perturbado);
         fclose(f);
     } else {
         perror("Erro ao salvar CSV");
     }
-
-    printf("Execução completa.\n");
-    printf("Tempo (parado): %.6f s\n", tempo_parado);
-    printf("Tempo (perturbado): %.6f s\n", tempo_perturbado);
 
     free_3d_array(u, N);
     free_3d_array(u_new, N);
