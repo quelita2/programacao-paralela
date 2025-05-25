@@ -133,7 +133,7 @@ int main(int argc, char** argv) {
 
     if (rank == 0) {
         printf("\n| Nº de Processos | Send/Recv (s) | Isend/Irecv+Wait (s) | Isend/Irecv+Test (s) |\n");
-        printf("|-----------------|---------------|---------------------|----------------------|\n");
+        printf("|-----------------|---------------|----------------------|-----------------------|\n");
         printf("| %15d | %13f | %20f | %20f |\n", size, t_block_all, t_wait_all, t_test_all);
     }
 
