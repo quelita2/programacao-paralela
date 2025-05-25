@@ -22,7 +22,38 @@ void update(double* u_new, double* u_old, int start, int end) {
     }
 }
 
+/* Exemplo:
+Se uma barra total (N = 16):
+
+Processo 0:   [0][1][2][3]
+Processo 1:          [4][5][6][7]
+Processo 2:                  [8][9][10][11]
+Processo 3:                          [12][13][14][15]
+
+Processo 1:
++----+---+---+---+---+----+
+| G0 | 4 | 5 | 6 | 7 | G1 |
++----+---+---+---+---+----+ 
+
+Envia 4 para processo 0 
+Recebe 3 do processo 0 -> u_local[0] = 3
+Envia 7 para processo 2
+Recebe 8 do processo 2 -> u_local[5] = 8
+
+G0 = recebe de processo-1
+G1 = recebe de processo+1
+4-7 = dados locais reais
+
+Comunicação:
+- Envia 4 a processo-1, recebe em G0
+- Envia 7 a processo+1, recebe em G1
+
+u_local = [ 3 , 4 , 5 , 6 , 7 , 8 ]
+*/
+
 // 1. Bloqueante (Send/Recv)
+// Envio bloqueante: o processo só continua quando o outro processo recebe
+// Recepção bloqueante: o processo só continua quando o outro processo envia
 double run_blocking(int local_n, int rank, int size, MPI_Comm comm) {
     double* u_old = malloc((local_n + 2) * sizeof(double));
     double* u_new = malloc((local_n + 2) * sizeof(double));
@@ -30,10 +61,12 @@ double run_blocking(int local_n, int rank, int size, MPI_Comm comm) {
 
     double t_start = MPI_Wtime();
     for (int step = 0; step < STEPS; step++) {
+        // Sou um processo com vizinho a esquerda
         if (rank > 0) {
             MPI_Send(&u_old[1], 1, MPI_DOUBLE, rank - 1, 0, comm);
             MPI_Recv(&u_old[0], 1, MPI_DOUBLE, rank - 1, 0, comm, MPI_STATUS_IGNORE);
         }
+        // Sou um processo com vizinho a direita
         if (rank < size - 1) {
             MPI_Send(&u_old[local_n], 1, MPI_DOUBLE, rank + 1, 0, comm);
             MPI_Recv(&u_old[local_n + 1], 1, MPI_DOUBLE, rank + 1, 0, comm, MPI_STATUS_IGNORE);
@@ -47,6 +80,10 @@ double run_blocking(int local_n, int rank, int size, MPI_Comm comm) {
 }
 
 // 2. Não bloqueante com Wait
+// Envio não bloqueante: o processo continua mesmo sem o outro processo receber
+// Recepção não bloqueante: o processo continua mesmo sem o outro processo enviar
+// Wait: espera o outro processo enviar/receber
+// Waitall: espera todos os processos terminarem
 double run_nonblocking_wait(int local_n, int rank, int size, MPI_Comm comm) {
     double* u_old = malloc((local_n + 2) * sizeof(double));
     double* u_new = malloc((local_n + 2) * sizeof(double));
@@ -74,6 +111,7 @@ double run_nonblocking_wait(int local_n, int rank, int size, MPI_Comm comm) {
 }
 
 // 3. Não bloqueante com Test (sobreposição)
+// Testall: verifica se todos os processos enviaram/receberam
 double run_nonblocking_test(int local_n, int rank, int size, MPI_Comm comm) {
     double* u_old = malloc((local_n + 2) * sizeof(double));
     double* u_new = malloc((local_n + 2) * sizeof(double));
