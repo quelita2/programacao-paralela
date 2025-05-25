@@ -1,7 +1,7 @@
 #!/bin/bash
 #SBATCH --job-name=pp-task12
 #SBATCH --time=0-0:20
-#SBATCH --partition=intel-128
+#SBATCH --partition=intel-512
 #SBATCH --output=esc-fraca-%j.out
 
 NSTEPS=50
