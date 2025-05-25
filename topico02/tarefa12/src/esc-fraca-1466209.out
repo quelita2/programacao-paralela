@@ -1,2 +1,0 @@
-/var/tmp/slurmd.spool/job1466209/slurm_script: line 13: 1313482 Killed                  ./main $N $NSTEPS $threads >> escalabilidade.csv
-slurmstepd: error: Detected 1 oom-kill event(s) in StepId=1466209.batch. Some of your processes may have been killed by the cgroup out-of-memory handler.
