@@ -14,7 +14,7 @@ output_file="resultados.csv"
 echo "processos,M,N,tempo" > $output_file
 
 tamanhos=(512 1024 2048 4096)
-processos=(2 4 8 16)
+processos=(2 4 8 16 32)
 
 for np in "${processos[@]}"; do
   for tam in "${tamanhos[@]}"; do
