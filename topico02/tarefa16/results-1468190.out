@@ -1,0 +1,172 @@
+Executando: mpirun -np 2 ./main 500 500
+--------------------------------------------------------------------------
+WARNING: There is at least one non-excluded one OpenFabrics device found,
+but there are no active ports detected (or Open MPI was unable to use
+them).  This is most certainly not what you wanted.  Check your
+cables, subnet manager configuration, etc.  The openib BTL will be
+ignored for this job.
+
+  Local host: r1i3n11
+--------------------------------------------------------------------------
+[r1i3n11.npad.internal:1329179] 1 more process has sent help message help-mpi-btl-openib.txt / no active ports found
+[r1i3n11.npad.internal:1329179] Set MCA parameter "orte_base_help_aggregate" to 0 to see all help / error messages
+Executando: mpirun -np 4 ./main 500 500
+--------------------------------------------------------------------------
+WARNING: There is at least one non-excluded one OpenFabrics device found,
+but there are no active ports detected (or Open MPI was unable to use
+them).  This is most certainly not what you wanted.  Check your
+cables, subnet manager configuration, etc.  The openib BTL will be
+ignored for this job.
+
+  Local host: r1i3n11
+--------------------------------------------------------------------------
+[r1i3n11.npad.internal:1329196] 3 more processes have sent help message help-mpi-btl-openib.txt / no active ports found
+[r1i3n11.npad.internal:1329196] Set MCA parameter "orte_base_help_aggregate" to 0 to see all help / error messages
+Pulando: Tamanho 500 não é divisível por 8 processos.
+Pulando: Tamanho 500 não é divisível por 16 processos.
+Pulando: Tamanho 500 não é divisível por 32 processos.
+Executando: mpirun -np 2 ./main 1000 1000
+--------------------------------------------------------------------------
+WARNING: There is at least one non-excluded one OpenFabrics device found,
+but there are no active ports detected (or Open MPI was unable to use
+them).  This is most certainly not what you wanted.  Check your
+cables, subnet manager configuration, etc.  The openib BTL will be
+ignored for this job.
+
+  Local host: r1i3n11
+--------------------------------------------------------------------------
+[r1i3n11.npad.internal:1329223] 1 more process has sent help message help-mpi-btl-openib.txt / no active ports found
+[r1i3n11.npad.internal:1329223] Set MCA parameter "orte_base_help_aggregate" to 0 to see all help / error messages
+Executando: mpirun -np 4 ./main 1000 1000
+--------------------------------------------------------------------------
+WARNING: There is at least one non-excluded one OpenFabrics device found,
+but there are no active ports detected (or Open MPI was unable to use
+them).  This is most certainly not what you wanted.  Check your
+cables, subnet manager configuration, etc.  The openib BTL will be
+ignored for this job.
+
+  Local host: r1i3n11
+--------------------------------------------------------------------------
+[r1i3n11.npad.internal:1329240] 3 more processes have sent help message help-mpi-btl-openib.txt / no active ports found
+[r1i3n11.npad.internal:1329240] Set MCA parameter "orte_base_help_aggregate" to 0 to see all help / error messages
+Executando: mpirun -np 8 ./main 1000 1000
+--------------------------------------------------------------------------
+WARNING: There is at least one non-excluded one OpenFabrics device found,
+but there are no active ports detected (or Open MPI was unable to use
+them).  This is most certainly not what you wanted.  Check your
+cables, subnet manager configuration, etc.  The openib BTL will be
+ignored for this job.
+
+  Local host: r1i3n11
+--------------------------------------------------------------------------
+[r1i3n11.npad.internal:1329267] 7 more processes have sent help message help-mpi-btl-openib.txt / no active ports found
+[r1i3n11.npad.internal:1329267] Set MCA parameter "orte_base_help_aggregate" to 0 to see all help / error messages
+Pulando: Tamanho 1000 não é divisível por 16 processos.
+Pulando: Tamanho 1000 não é divisível por 32 processos.
+Executando: mpirun -np 2 ./main 2000 2000
+--------------------------------------------------------------------------
+WARNING: There is at least one non-excluded one OpenFabrics device found,
+but there are no active ports detected (or Open MPI was unable to use
+them).  This is most certainly not what you wanted.  Check your
+cables, subnet manager configuration, etc.  The openib BTL will be
+ignored for this job.
+
+  Local host: r1i3n11
+--------------------------------------------------------------------------
+[r1i3n11.npad.internal:1329314] 1 more process has sent help message help-mpi-btl-openib.txt / no active ports found
+[r1i3n11.npad.internal:1329314] Set MCA parameter "orte_base_help_aggregate" to 0 to see all help / error messages
+Executando: mpirun -np 4 ./main 2000 2000
+--------------------------------------------------------------------------
+WARNING: There is at least one non-excluded one OpenFabrics device found,
+but there are no active ports detected (or Open MPI was unable to use
+them).  This is most certainly not what you wanted.  Check your
+cables, subnet manager configuration, etc.  The openib BTL will be
+ignored for this job.
+
+  Local host: r1i3n11
+--------------------------------------------------------------------------
+[r1i3n11.npad.internal:1329331] 3 more processes have sent help message help-mpi-btl-openib.txt / no active ports found
+[r1i3n11.npad.internal:1329331] Set MCA parameter "orte_base_help_aggregate" to 0 to see all help / error messages
+Executando: mpirun -np 8 ./main 2000 2000
+--------------------------------------------------------------------------
+WARNING: There is at least one non-excluded one OpenFabrics device found,
+but there are no active ports detected (or Open MPI was unable to use
+them).  This is most certainly not what you wanted.  Check your
+cables, subnet manager configuration, etc.  The openib BTL will be
+ignored for this job.
+
+  Local host: r1i3n11
+--------------------------------------------------------------------------
+[r1i3n11.npad.internal:1329358] 7 more processes have sent help message help-mpi-btl-openib.txt / no active ports found
+[r1i3n11.npad.internal:1329358] Set MCA parameter "orte_base_help_aggregate" to 0 to see all help / error messages
+Executando: mpirun -np 16 ./main 2000 2000
+--------------------------------------------------------------------------
+WARNING: There is at least one non-excluded one OpenFabrics device found,
+but there are no active ports detected (or Open MPI was unable to use
+them).  This is most certainly not what you wanted.  Check your
+cables, subnet manager configuration, etc.  The openib BTL will be
+ignored for this job.
+
+  Local host: r1i3n11
+--------------------------------------------------------------------------
+[r1i3n11.npad.internal:1329405] 15 more processes have sent help message help-mpi-btl-openib.txt / no active ports found
+[r1i3n11.npad.internal:1329405] Set MCA parameter "orte_base_help_aggregate" to 0 to see all help / error messages
+Pulando: Tamanho 2000 não é divisível por 32 processos.
+Executando: mpirun -np 2 ./main 4000 4000
+--------------------------------------------------------------------------
+WARNING: There is at least one non-excluded one OpenFabrics device found,
+but there are no active ports detected (or Open MPI was unable to use
+them).  This is most certainly not what you wanted.  Check your
+cables, subnet manager configuration, etc.  The openib BTL will be
+ignored for this job.
+
+  Local host: r1i3n11
+--------------------------------------------------------------------------
+[r1i3n11.npad.internal:1329492] 1 more process has sent help message help-mpi-btl-openib.txt / no active ports found
+[r1i3n11.npad.internal:1329492] Set MCA parameter "orte_base_help_aggregate" to 0 to see all help / error messages
+Executando: mpirun -np 4 ./main 4000 4000
+--------------------------------------------------------------------------
+WARNING: There is at least one non-excluded one OpenFabrics device found,
+but there are no active ports detected (or Open MPI was unable to use
+them).  This is most certainly not what you wanted.  Check your
+cables, subnet manager configuration, etc.  The openib BTL will be
+ignored for this job.
+
+  Local host: r1i3n11
+--------------------------------------------------------------------------
+[r1i3n11.npad.internal:1329509] 3 more processes have sent help message help-mpi-btl-openib.txt / no active ports found
+[r1i3n11.npad.internal:1329509] Set MCA parameter "orte_base_help_aggregate" to 0 to see all help / error messages
+Executando: mpirun -np 8 ./main 4000 4000
+--------------------------------------------------------------------------
+WARNING: There is at least one non-excluded one OpenFabrics device found,
+but there are no active ports detected (or Open MPI was unable to use
+them).  This is most certainly not what you wanted.  Check your
+cables, subnet manager configuration, etc.  The openib BTL will be
+ignored for this job.
+
+  Local host: r1i3n11
+--------------------------------------------------------------------------
+[r1i3n11.npad.internal:1329536] 7 more processes have sent help message help-mpi-btl-openib.txt / no active ports found
+[r1i3n11.npad.internal:1329536] Set MCA parameter "orte_base_help_aggregate" to 0 to see all help / error messages
+Executando: mpirun -np 16 ./main 4000 4000
+--------------------------------------------------------------------------
+WARNING: There is at least one non-excluded one OpenFabrics device found,
+but there are no active ports detected (or Open MPI was unable to use
+them).  This is most certainly not what you wanted.  Check your
+cables, subnet manager configuration, etc.  The openib BTL will be
+ignored for this job.
+
+  Local host: r1i3n11
+--------------------------------------------------------------------------
+[r1i3n11.npad.internal:1329583] 15 more processes have sent help message help-mpi-btl-openib.txt / no active ports found
+[r1i3n11.npad.internal:1329583] Set MCA parameter "orte_base_help_aggregate" to 0 to see all help / error messages
+Executando: mpirun -np 32 ./main 4000 4000
+--------------------------------------------------------------------------
+WARNING: There was an error initializing an OpenFabrics device.
+
+  Local host:   r1i3n11
+  Local device: mlx4_0
+--------------------------------------------------------------------------
+[r1i3n11.npad.internal:1329671] 31 more processes have sent help message help-mpi-btl-openib.txt / error in device init
+[r1i3n11.npad.internal:1329671] Set MCA parameter "orte_base_help_aggregate" to 0 to see all help / error messages
+Testes concluídos. Resultados salvos em resultados.csv.
