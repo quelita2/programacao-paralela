@@ -63,7 +63,25 @@ double run_blocking(int local_n, int rank, int size, MPI_Comm comm) {
     for (int step = 0; step < STEPS; step++) {
         // Sou um processo com vizinho a esquerda
         if (rank > 0) {
+            /* Envia dados de forma bloqueante (espera o envio concluir):
+             *buf: ponteiro para os dados a enviar
+             *count: número de elementos
+             *type: tipo dos dados
+             *dest: rank do processo destino
+             *tag: etiqueta da mensagem (geralmente 0)
+             *comm: comunicador (geralmente MPI_COMM_WORLD)
+            */
             MPI_Send(&u_old[1], 1, MPI_DOUBLE, rank - 1, 0, comm);
+
+            /*Recebe dados de forma bloqueante (espera o dado chegar):
+             *buf: onde armazenar os dados recebidos
+             *count: número de elementos esperados
+             *type: tipo dos dados esperados
+             *source: rank do processo origem
+             *tag: etiqueta da mensagem (deve bater com a do envio)
+             *comm: comunicador
+             *status: estrutura para guardar informações da recepção (MPI_STATUS_IGNORE se não usar)
+            */
             MPI_Recv(&u_old[0], 1, MPI_DOUBLE, rank - 1, 0, comm, MPI_STATUS_IGNORE);
         }
         // Sou um processo com vizinho a direita
@@ -94,6 +112,9 @@ double run_nonblocking_wait(int local_n, int rank, int size, MPI_Comm comm) {
         MPI_Request reqs[4];
         int count = 0;
         if (rank > 0) {
+            /*Mesma estrutura de Send e Recv só que com:
+             *MPI_Request* request: ponteiro para uma variável onde o MPI guardará o “pedido” que acompanha o andamento da comunicação
+            */
             MPI_Isend(&u_old[1], 1, MPI_DOUBLE, rank - 1, 0, comm, &reqs[count++]);
             MPI_Irecv(&u_old[0], 1, MPI_DOUBLE, rank - 1, 0, comm, &reqs[count++]);
         }
@@ -101,6 +122,12 @@ double run_nonblocking_wait(int local_n, int rank, int size, MPI_Comm comm) {
             MPI_Isend(&u_old[local_n], 1, MPI_DOUBLE, rank + 1, 0, comm, &reqs[count++]);
             MPI_Irecv(&u_old[local_n + 1], 1, MPI_DOUBLE, rank + 1, 0, comm, &reqs[count++]);
         }
+
+        /*
+         *count: quantos pedidos há
+         *requests: array de MPI_Request
+         *statuses: array de MPI_Status, ou MPI_STATUSES_IGNORE
+        */
         MPI_Waitall(count, reqs, MPI_STATUSES_IGNORE);
         update(u_new, u_old, 1, local_n);
         double* temp = u_old; u_old = u_new; u_new = temp;
@@ -136,6 +163,7 @@ double run_nonblocking_test(int local_n, int rank, int size, MPI_Comm comm) {
         int completed = 0;
         if (count > 0) {
             while (!completed)
+                // flag será 1 se todas terminaram e 0 se ainda estiverem em andamento
                 MPI_Testall(count, reqs, &completed, MPI_STATUSES_IGNORE);
         }
 
