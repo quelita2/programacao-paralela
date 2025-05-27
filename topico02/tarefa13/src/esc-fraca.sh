@@ -16,7 +16,7 @@ PLACES_OPTIONS=("cores" "threads" "sockets")
 
 for threads in 1 2 4 8 16 32; do
     export OMP_NUM_THREADS=$threads
-    N=$((4 * threads))
+    N=$((2 * threads))
     for bind in "${BIND_OPTIONS[@]}"; do
         for places in "${PLACES_OPTIONS[@]}"; do
             export OMP_PROC_BIND=$bind
