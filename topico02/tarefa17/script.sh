@@ -31,7 +31,7 @@ for sz in "${sizes[@]}"; do
       result=$(mpirun -np $p ./main $sz $sz | grep "Tempo de execução")
       
       # Extração do tempo em segundos
-      tempo=$(echo $result | awk '{print $5}')
+      tempo=$(echo $result | awk '{print $4}')
       
       # Salvar no CSV
       echo "$sz,$sz,$p,$tempo" >> $CSV_FILE
