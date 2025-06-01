@@ -1,0 +1,203 @@
+gcc: error: matvec_col.c: No such file or directory
+Produto matriz-vetor (colunas)...
+---------------------------------------------
+Executando: M=N=512, P=2 ... --------------------------------------------------------------------------
+mpirun was unable to launch the specified application as it could not access
+or execute an executable:
+
+Executable: ./matvec_col
+Node: r1i3n14
+
+while attempting to start process rank 0.
+--------------------------------------------------------------------------
+
+Executando: M=N=512, P=4 ... --------------------------------------------------------------------------
+mpirun was unable to launch the specified application as it could not access
+or execute an executable:
+
+Executable: ./matvec_col
+Node: r1i3n14
+
+while attempting to start process rank 0.
+--------------------------------------------------------------------------
+
+Executando: M=N=512, P=8 ... --------------------------------------------------------------------------
+mpirun was unable to launch the specified application as it could not access
+or execute an executable:
+
+Executable: ./matvec_col
+Node: r1i3n14
+
+while attempting to start process rank 0.
+--------------------------------------------------------------------------
+
+Executando: M=N=512, P=16 ... --------------------------------------------------------------------------
+mpirun was unable to launch the specified application as it could not access
+or execute an executable:
+
+Executable: ./matvec_col
+Node: r1i3n14
+
+while attempting to start process rank 0.
+--------------------------------------------------------------------------
+
+Executando: M=N=512, P=32 ... --------------------------------------------------------------------------
+mpirun was unable to launch the specified application as it could not access
+or execute an executable:
+
+Executable: ./matvec_col
+Node: r1i3n14
+
+while attempting to start process rank 0.
+--------------------------------------------------------------------------
+
+Executando: M=N=1024, P=2 ... --------------------------------------------------------------------------
+mpirun was unable to launch the specified application as it could not access
+or execute an executable:
+
+Executable: ./matvec_col
+Node: r1i3n14
+
+while attempting to start process rank 0.
+--------------------------------------------------------------------------
+
+Executando: M=N=1024, P=4 ... --------------------------------------------------------------------------
+mpirun was unable to launch the specified application as it could not access
+or execute an executable:
+
+Executable: ./matvec_col
+Node: r1i3n14
+
+while attempting to start process rank 0.
+--------------------------------------------------------------------------
+
+Executando: M=N=1024, P=8 ... --------------------------------------------------------------------------
+mpirun was unable to launch the specified application as it could not access
+or execute an executable:
+
+Executable: ./matvec_col
+Node: r1i3n14
+
+while attempting to start process rank 0.
+--------------------------------------------------------------------------
+
+Executando: M=N=1024, P=16 ... --------------------------------------------------------------------------
+mpirun was unable to launch the specified application as it could not access
+or execute an executable:
+
+Executable: ./matvec_col
+Node: r1i3n14
+
+while attempting to start process rank 0.
+--------------------------------------------------------------------------
+
+Executando: M=N=1024, P=32 ... --------------------------------------------------------------------------
+mpirun was unable to launch the specified application as it could not access
+or execute an executable:
+
+Executable: ./matvec_col
+Node: r1i3n14
+
+while attempting to start process rank 0.
+--------------------------------------------------------------------------
+
+Executando: M=N=2048, P=2 ... --------------------------------------------------------------------------
+mpirun was unable to launch the specified application as it could not access
+or execute an executable:
+
+Executable: ./matvec_col
+Node: r1i3n14
+
+while attempting to start process rank 0.
+--------------------------------------------------------------------------
+
+Executando: M=N=2048, P=4 ... --------------------------------------------------------------------------
+mpirun was unable to launch the specified application as it could not access
+or execute an executable:
+
+Executable: ./matvec_col
+Node: r1i3n14
+
+while attempting to start process rank 0.
+--------------------------------------------------------------------------
+
+Executando: M=N=2048, P=8 ... --------------------------------------------------------------------------
+mpirun was unable to launch the specified application as it could not access
+or execute an executable:
+
+Executable: ./matvec_col
+Node: r1i3n14
+
+while attempting to start process rank 0.
+--------------------------------------------------------------------------
+
+Executando: M=N=2048, P=16 ... --------------------------------------------------------------------------
+mpirun was unable to launch the specified application as it could not access
+or execute an executable:
+
+Executable: ./matvec_col
+Node: r1i3n14
+
+while attempting to start process rank 0.
+--------------------------------------------------------------------------
+
+Executando: M=N=2048, P=32 ... --------------------------------------------------------------------------
+mpirun was unable to launch the specified application as it could not access
+or execute an executable:
+
+Executable: ./matvec_col
+Node: r1i3n14
+
+while attempting to start process rank 0.
+--------------------------------------------------------------------------
+
+Executando: M=N=4096, P=2 ... --------------------------------------------------------------------------
+mpirun was unable to launch the specified application as it could not access
+or execute an executable:
+
+Executable: ./matvec_col
+Node: r1i3n14
+
+while attempting to start process rank 0.
+--------------------------------------------------------------------------
+
+Executando: M=N=4096, P=4 ... --------------------------------------------------------------------------
+mpirun was unable to launch the specified application as it could not access
+or execute an executable:
+
+Executable: ./matvec_col
+Node: r1i3n14
+
+while attempting to start process rank 0.
+--------------------------------------------------------------------------
+
+Executando: M=N=4096, P=8 ... --------------------------------------------------------------------------
+mpirun was unable to launch the specified application as it could not access
+or execute an executable:
+
+Executable: ./matvec_col
+Node: r1i3n14
+
+while attempting to start process rank 0.
+--------------------------------------------------------------------------
+
+Executando: M=N=4096, P=16 ... --------------------------------------------------------------------------
+mpirun was unable to launch the specified application as it could not access
+or execute an executable:
+
+Executable: ./matvec_col
+Node: r1i3n14
+
+while attempting to start process rank 0.
+--------------------------------------------------------------------------
+
+Executando: M=N=4096, P=32 ... --------------------------------------------------------------------------
+mpirun was unable to launch the specified application as it could not access
+or execute an executable:
+
+Executable: ./matvec_col
+Node: r1i3n14
+
+while attempting to start process rank 0.
+--------------------------------------------------------------------------
+
