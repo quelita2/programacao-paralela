@@ -1,7 +1,6 @@
 #!/bin/bash
 #SBATCH --job-name=task13
-#SBATCH --ntasks=32
-#SBATCH --cpus-per-task=1
+#SBATCH --cpus-per-task=32
 #SBATCH --time=1-00:00:00
 #SBATCH --partition=intel-512
 #SBATCH --output=results-%j.out
@@ -10,12 +9,10 @@ gcc -O3 -fopenmp main.c -o main
 
 EXEC=./main
 
-# Número de threads a testar
 THREADS_LIST=(1 2 4 8 16 32)
 BIND_POLICIES=("false" "true" "spread" "close" "master")
 PLACES_LIST=("cores" "threads" "sockets")
 
-# Cria arquivo de saída
 RESULTS="resultados_afinidade.csv"
 echo "Threads,OMP_PROC_BIND,OMP_PLACES,Tempo(s)" > "$RESULTS"
 
@@ -30,17 +27,14 @@ for threads in "${THREADS_LIST[@]}"; do
 
       echo "Rodando com $threads threads | BIND=$bind | PLACE=$place"
 
-      # Mede o tempo real de execução
       START=$(date +%s.%N)
       $EXEC > /dev/null 2>&1
       END=$(date +%s.%N)
       DURATION=$(awk "BEGIN {print $END - $START}")
 
-      # Armazena resultados
       echo "$threads,$bind,$place,$DURATION" >> "$RESULTS"
     done
   done
 done
 
 echo "Testes concluídos! Resultados em $RESULTS"
-
