@@ -1,6 +1,8 @@
 #!/bin/bash
 #SBATCH --job-name=task13
-#SBATCH --time=0-0:30
+#SBATCH --ntasks=32
+#SBATCH --cpus-per-task=1
+#SBATCH --time=1-00:00:00
 #SBATCH --partition=intel-512
 #SBATCH --output=results-%j.out
 
