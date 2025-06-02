@@ -87,5 +87,3 @@ Rodando com 32 threads | BIND=close | PLACE=threads
 Rodando com 32 threads | BIND=close | PLACE=sockets
 Rodando com 32 threads | BIND=master | PLACE=cores
 Rodando com 32 threads | BIND=master | PLACE=threads
-Rodando com 32 threads | BIND=master | PLACE=sockets
-Testes concluídos! Resultados em resultados_afinidade.csv
