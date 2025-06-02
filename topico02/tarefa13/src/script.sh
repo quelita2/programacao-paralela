@@ -32,7 +32,7 @@ for threads in "${THREADS_LIST[@]}"; do
       START=$(date +%s.%N)
       $EXEC > /dev/null 2>&1
       END=$(date +%s.%N)
-      DURATION=$(echo "$END - $START" | bc)
+      DURATION=$(awk "BEGIN {print $END - $START}")
 
       # Armazena resultados
       echo "$threads,$bind,$place,$DURATION" >> "$RESULTS"
