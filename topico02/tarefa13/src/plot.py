@@ -1,37 +1,34 @@
 import pandas as pd
 import matplotlib.pyplot as plt
-import seaborn as sns
-import os
 
-csv_path = "resultados_afinidade.csv"
-output_path = "../assets/grafico_afinidade.png"
+# Carrega os dados do CSV
+df = pd.read_csv("resultados_afinidade.csv")
 
-os.makedirs(os.path.dirname(output_path), exist_ok=True)
+# Converte os dados para tipos apropriados
+df["Threads"] = df["Threads"].astype(int)
+df["Tempo(s)"] = df["Tempo(s)"].astype(float)
 
-df = pd.read_csv(csv_path)
+# Lista de políticas de OMP_PROC_BIND únicas
+bind_policies = df["OMP_PROC_BIND"].unique()
 
-# Converte para string (caso o CSV salve valores booleanos como True/False)
-df["OMP_PROC_BIND"] = df["OMP_PROC_BIND"].astype(str)
-df["OMP_PLACES"] = df["OMP_PLACES"].astype(str)
+# Cria o gráfico
+plt.figure(figsize=(10, 6))
 
-sns.set(style="whitegrid")
+for bind in bind_policies:
+    subset = df[df["OMP_PROC_BIND"] == bind]
 
-g = sns.relplot(
-    data=df,
-    x="Threads",
-    y="Tempo(s)",
-    hue="OMP_PLACES",
-    col="OMP_PROC_BIND",
-    kind="line",
-    marker="o",
-    col_wrap=3,
-    facet_kws={'sharey': False, 'sharex': True}
-)
+    # Agrupa por número de threads e calcula média dos tempos (para diferentes OMP_PLACES)
+    avg_times = subset.groupby("Threads")["Tempo(s)"].mean()
 
-g.set_titles("OMP_PROC_BIND = {col_name}")
-g.set_axis_labels("Número de Threads", "Tempo de Execução (s)")
-g.fig.suptitle("Comparação de Afinidades de Threads com OpenMP", y=1.03, fontsize=16)
+    plt.plot(avg_times.index, avg_times.values, marker='o', label=f'OMP_PROC_BIND={bind}')
 
+# Personalização do gráfico
+plt.title("Tempo de Execução vs. Número de Threads\n(Diferentes OMP_PROC_BIND)")
+plt.xlabel("Número de Threads")
+plt.ylabel("Tempo de Execução (s)")
+plt.grid(True)
+plt.legend()
 plt.tight_layout()
-plt.savefig(output_path)
-print(f"Gráfico salvo em: {output_path}")
+
+# Salva e mostra o gráfico
+plt.savefig("grafico_omp_proc_bind.png")
